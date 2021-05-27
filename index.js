@@ -2,6 +2,42 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+const generateREADME = (answers) =>
+    `# ${answers.title}
+
+${answers.description}
+
+## Installation/Usage
+
+* ${answers.usage}
+
+* ${answers.installation}
+
+## Contributors
+
+* ${answers.contributions}
+
+## Testing Instructions
+
+* ${answers.Tests}
+
+## License
+
+* ${answers.license}
+
+## Contact
+
+* Github
+
+    * ${answers.github}
+
+* Email
+
+    * ${answers.email}
+`;
+
+// TODO: Create an array of questions for user input
+// const questions =
 inquirer.prompt([
     {
         type: 'input',
@@ -49,22 +85,22 @@ inquirer.prompt([
         message: 'What is your email?',
         name: 'email'
     }
-]).then((answers) =>
-{
-    console.log('title: ', answers.title);
-    console.log('description: ', answers.description);
-    console.log('installation:', answers.installation);
-    console.log('usage:', answers.usage);
-    console.log('contributions:', answers.contributions);
-    console.log('Tests:', answers.Tests);
-    console.log('license:', answers.license);
-    console.log('github:', answers.github);
-    console.log('email:', answers.email);
-}
-)
+]).then((answers) => {
+    const readmePageContent = generateREADME(answers);
 
-// TODO: Create an array of questions for user input
-const questions = [];
+    fs.writeFile('readme2.md', readmePageContent, (err) =>
+        err ? console.log(err) : console.log('Successfully created README.md!'));
+    // console.log('title: ', answers.title);
+    // console.log('description: ', answers.description);
+    // console.log('installation:', answers.installation);
+    // console.log('usage:', answers.usage);
+    // console.log('contributions:', answers.contributions);
+    // console.log('Tests:', answers.Tests);
+    // console.log('license:', answers.license);
+    // console.log('github:', answers.github);
+    // console.log('email:', answers.email);
+});
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { }
