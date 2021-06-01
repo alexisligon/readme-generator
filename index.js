@@ -40,9 +40,9 @@ const questions = [
         type: 'list',
         message: 'Which license will be used?',
         name: 'license',
-        choices: ['Apache', 'GNU', 'IBM']
+        choices: ['Apache', 'GNU', 'IBM', 'ISC', 'MIT', 'Mozilla', 'Perl', 'no license']
     },
-    //, 'ISC', 'MIT', 'Mozilla', 'Perl'
+    
     {
         type: 'input',
         message: 'What is your GitHub username?',

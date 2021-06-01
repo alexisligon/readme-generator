@@ -13,6 +13,27 @@ function renderLicenseBadge(license) {
 
     case 'IBM' :
     return `[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)`
+    break;
+    
+    case 'ISC' :
+    return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
+    break;
+
+    case 'MIT' :
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+    break;
+
+    case 'Mozilla' :
+    return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
+    break;
+
+    case 'Perl' :
+    return `[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)`
+    break;
+
+    case 'no license' :
+    return ''
+    break;
   }
   // if (license.license === 'Apache') {
   //   [License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[Apache](https://opensource.org/licenses/Apache-2.0)
