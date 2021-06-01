@@ -1,44 +1,11 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { generateREADME } = require('./utils/generateMarkdown.js')
 
-const generateREADME = (answers) =>
-    `# ${answers.title}
-
-${answers.description}
-
-## Installation/Usage
-
-* ${answers.usage}
-
-* ${answers.installation}
-
-## Contributors
-
-* ${answers.contributions}
-
-## Testing Instructions
-
-* ${answers.Tests}
-
-## License
-
-* ${answers.license}
-
-## Contact
-
-* Github
-
-    * ${answers.github}
-
-* Email
-
-    * ${answers.email}
-`;
 
 // TODO: Create an array of questions for user input
-// const questions =
-inquirer.prompt([
+const questions = [
     {
         type: 'input',
         message: 'What is the title of your project?',
@@ -73,8 +40,9 @@ inquirer.prompt([
         type: 'list',
         message: 'Which license will be used?',
         name: 'license',
-        choices: ['first', 'second', 'third', 'fourth']
+        choices: ['Apache', 'GNU', 'IBM']
     },
+    //, 'ISC', 'MIT', 'Mozilla', 'Perl'
     {
         type: 'input',
         message: 'What is your GitHub username?',
@@ -85,28 +53,32 @@ inquirer.prompt([
         message: 'What is your email?',
         name: 'email'
     }
-]).then((answers) => {
-    const readmePageContent = generateREADME(answers);
-
-    fs.writeFile('readme2.md', readmePageContent, (err) =>
-        err ? console.log(err) : console.log('Successfully created README.md!'));
-    // console.log('title: ', answers.title);
-    // console.log('description: ', answers.description);
-    // console.log('installation:', answers.installation);
-    // console.log('usage:', answers.usage);
-    // console.log('contributions:', answers.contributions);
-    // console.log('Tests:', answers.Tests);
-    // console.log('license:', answers.license);
-    // console.log('github:', answers.github);
-    // console.log('email:', answers.email);
-});
+]
 
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
-function init() { }
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const readmePageContent = generateREADME(answers);
+
+        fs.writeFile('./dist/README.md', readmePageContent, (err) =>
+            err ? console.log(err) : console.log('Successfully created README.md!'));
+        // console.log('title: ', answers.title);
+        // console.log('description: ', answers.description);
+        // console.log('installation:', answers.installation);
+        // console.log('usage:', answers.usage);
+        // console.log('contributions:', answers.contributions);
+        // console.log('Tests:', answers.Tests);
+        // console.log('license:', answers.license);
+        // console.log('github:', answers.github);
+        // console.log('email:', answers.email);
+    });
+}
 
 // Function call to initialize app
 init();
+
+//https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#apache-20-license
