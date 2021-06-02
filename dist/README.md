@@ -1,29 +1,29 @@
-# d 
+# README Generator 
 
 
 
-d
+This command line application allows users to seamlessly create a high quality README file for projects. This application will dynamically generate a professional README from the user's input using the Inquirer npm package.
 
 ## Installation/Usage
 
-* d
+* The application runs with node index.js on the command lin line.
 
-* d
+* 
 
 ## Contributors
 
-* d
+* Alexis Ligon
 
 ## Testing Instructions
 
-* d
+* 
 
 ## Contact
 
 * Github
 
-    * d
+    * 
 
 * Email
 
-    * d
+    * aligon17@gmail.com
