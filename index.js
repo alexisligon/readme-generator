@@ -66,19 +66,11 @@ function init() {
 
         fs.writeFile('./dist/README.md', readmePageContent, (err) =>
             err ? console.log(err) : console.log('Successfully created README.md!'));
-        // console.log('title: ', answers.title);
-        // console.log('description: ', answers.description);
-        // console.log('installation:', answers.installation);
-        // console.log('usage:', answers.usage);
-        // console.log('contributions:', answers.contributions);
-        // console.log('Tests:', answers.Tests);
-        // console.log('license:', answers.license);
-        // console.log('github:', answers.github);
-        // console.log('email:', answers.email);
     });
 }
 
 // Function call to initialize app
 init();
 
+//website for badges
 //https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#apache-20-license

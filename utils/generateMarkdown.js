@@ -35,20 +35,7 @@ function renderLicenseBadge(license) {
     return ''
     break;
   }
-  // if (license.license === 'Apache') {
-  //   [License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[Apache](https://opensource.org/licenses/Apache-2.0)
-  // } else if(license.license === '') {
-    
-  // }
 }
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 const generateREADME = (answers) =>
@@ -76,7 +63,7 @@ ${answers.description}
 
 * Github
 
-    * ${answers.github}
+    * github.com/${answers.github}
 
 * Email
 

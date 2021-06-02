@@ -16,8 +16,18 @@ This command line application allows users to seamlessly create a high quality R
 
 * Github
 
-    * 
+    * https://github.com/alexisligon/readme-generator
 
 * Email
 
     * aligon17@gmail.com
+
+<img src = "./img/capture1.jpg"/>
+
+Users are presented with a series of questions pertaining to the project.
+
+<img src="./img/capture2.jpg"/>
+
+Once all input for questions is completed, the README file is generated.
+
+<img src="./img/capture3.jpg">
